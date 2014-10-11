@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/gmapv3.css" />
     <!-- スマートフォン向けviewportの指定 -->
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <!-- Bootstrap Core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     <!-- Google Maps APIの読み込み -->
@@ -18,9 +20,10 @@
         });
         /* 地図の初期化 */
         function initialize() {
-            /* 緯度・経度：平和公園 宮島*/
+            /* 緯度・経度：平和公園 宮島 頼山陽史跡資料館 */
             var peacepark=new google.maps.LatLng(34.393081, 132.452242);
-	    var miyajima= new google.maps.LatLng(34.275092, 132.307649);
+            var miyajima= new google.maps.LatLng(34.275092, 132.307649);
+	    var raisanyo= new google.maps.LatLng(34.392491, 132.457289);
             /* 地図のオプション設定 */
             var myOptions={
                 /*初期のズーム レベル */
@@ -44,6 +47,13 @@
                 map: map,
                 title:"宮島"
             });
+            var marker3=new google.maps.Marker({
+                position: raisanyo,
+	        name: "raisanyo",
+                map: map,
+                title:"頼山陽史跡資料館",
+		visible:false
+            });
             /* マーカーがクリックされた時 */
             google.maps.event.addListener(marker1, 'click', function() {
                 showInfoWindow(this);
@@ -51,13 +61,17 @@
             google.maps.event.addListener(marker2, 'click', function() {
                 showInfoWindow(this);
             });
+	    /* 行きましたがクリックされた時 */
+            $(".controls :checkbox").click(function() {
+            	marker3.visible = true;
+            });
             /* 情報ウィンドウ表示 */
             function showInfoWindow(obj){
                 /* 既に開かれていたら閉じる */
                 if(infowindow) infowindow.close();
                 infowindow=new google.maps.InfoWindow({
                     /* クリックしたマーカーのタイトルと詳細へのリンクを表示 */
-		    content:obj.getTitle()+"<br />"+"<a href="+obj.name+".html target=_blank>詳細</a>",
+		    content:"<a href="+obj.name+".html target=_blank>"+obj.getTitle()+"</a><br /><div class=controls><label class=checkbox inline><input type=checkbox id=inlineCheckbox1 value=option1>もう行きました</label></div>",
                 });
                 infowindow.open(map,obj);
             }
