@@ -79,6 +79,67 @@
 
 </script>
 
+<link rel="stylesheet" type="text/css" href="stylesheets/gmapv3.css" />
+<!-- スマートフォン向けviewportの指定 -->
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<!-- jQuery -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<!-- Google Maps APIの読み込み -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript">
+    var map, marker, infowindow;
+    /* ページ読み込み時に地図を初期化 */
+    $(function(){
+        initialize();
+    });
+    /* 地図の初期化 */
+    function initialize() {
+        /* 緯度・経度：平和公園 宮島*/
+        var peacepark=new google.maps.LatLng(34.393081, 132.452242);
+  var miyajima= new google.maps.LatLng(34.275092, 132.307649);
+        /* 地図のオプション設定 */
+        var myOptions={
+            /*初期のズーム レベル */
+            zoom: 11,
+            /* 地図の中心点 */
+            center: new google.maps.LatLng(34.393081, 132.452242),
+            /* 地図タイプ */
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        /* 地図オブジェクト */
+        map=new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        var marker1=new google.maps.Marker({
+            position: peacepark,
+name: "peacepark",
+            map: map,
+            title:"平和公園"
+        });
+        var marker2=new google.maps.Marker({
+            position: miyajima,
+name: "miyajima",
+            map: map,
+            title:"宮島"
+        });
+        /* マーカーがクリックされた時 */
+        google.maps.event.addListener(marker1, 'click', function() {
+            showInfoWindow(this);
+        });
+        google.maps.event.addListener(marker2, 'click', function() {
+            showInfoWindow(this);
+        });
+        /* 情報ウィンドウ表示 */
+        function showInfoWindow(obj){
+            /* 既に開かれていたら閉じる */
+            if(infowindow) infowindow.close();
+            infowindow=new google.maps.InfoWindow({
+                /* クリックしたマーカーのタイトルと詳細へのリンクを表示 */
+    content:obj.getTitle()+"<br />"+"<a href="+obj.name+".html target=_blank>詳細</a>",
+            });
+            infowindow.open(map,obj);
+        }
+    }
+</script>
+
 </body>
 
 </html>
