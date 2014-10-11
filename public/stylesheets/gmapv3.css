@@ -1,0 +1,249 @@
+@charset "utf-8";
+@import "gh-buttons.css";
+html, body {
+    font-size: 12px;
+    height: 100%;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    word-break: break-all;
+}
+body {
+    margin: 10px;
+}
+textarea#res {
+    box-sizing: border-box;
+    font-size: 9px;
+    height: 100px;
+    margin: 10px 0;
+    padding: 0;
+    width: 498px;
+}
+h1, h2, h3, p {
+    display: block;
+    font-size: 100%;
+    margin: 10px 0;
+}
+pre {
+    overflow: auto;
+}
+.w100p {
+    width: 100%;
+}
+.cf:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+.cf {
+    display: inline-block;
+}
+html[xmlns] .cf {
+    display: block;
+}
+* html .cf {
+    height: 1%;
+}
+.size {
+    box-sizing: border-box;
+}
+.shadow {
+    box-shadow: 1px 1px 2px #888;
+}
+#map_canvas {
+    height: 498px;
+    margin: 10px 0;
+    width: 498px;
+}
+#zoomlevel span {
+    font-size: 120%;
+    font-weight: bold;
+}
+#res {
+    color: red;
+}
+dl#infowin1 {
+    margin: 0;
+    padding: 0;
+}
+dl#infowin1 dt {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+dl#infowin1 dd {
+    line-height: 1.5;
+    margin: 5px 0 0;
+    padding: 0;
+}
+dl#infowin1 dd img {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    padding: 2px;
+}
+dl#infowin2 {
+    margin: 0;
+    padding: 0;
+}
+dl#infowin2 dt {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+dl#infowin2 dd {
+    line-height: 1.5;
+    margin: 5px 0 0;
+    padding: 0;
+}
+dl#infowin2 dd img {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    padding: 2px;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+#map_canvas {
+    height: 100%;
+    width: 100%;
+}
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+#map_canvas {
+    height: 100%;
+    width: 100%;
+}
+textarea#res {
+    width: 100%;
+}
+}
+#map {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.infowin {
+    font-size: 11px;
+    line-height: 1;
+    overflow: visible;
+}
+.infowin p {
+    margin: 5px 0;
+    padding: 0;
+}
+.infowin .picframe {
+    overflow: hidden;
+    text-align: center;
+}
+.infowin .picframe img {
+    border: 2px solid #fff;
+    margin: 5px;
+    overflow: hidden;
+}
+.infowin .ttl {
+    overflow: hidden;
+    width: 96%;
+}
+.infowin .ttl b {
+    font-size: 130%;
+    overflow: hidden;
+}
+.infowin .ttl img {
+    float: left;
+    height: 16px;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 16px;
+}
+.infowin ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.infowin li {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.infowin table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 5px 0;
+    padding: 0;
+    width: 100%;
+}
+.infowin th {
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
+    width: 6em;
+}
+.infowin td {
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 0 0 0 1em;
+    text-align: left;
+}
+.infowin th span {
+    display: block;
+    font-weight: normal;
+}
+.infowin .comment {
+    background: none repeat scroll 0 0 #eee;
+    height: 100px;
+    margin: 5px 0;
+    overflow: auto;
+    padding: 0;
+}
+.panowin {
+    font-size: 11px;
+    line-height: 1;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+}
+.panowin .thumb {
+    text-align: center;
+}
+.panowin .thumb img {
+    border: 2px solid #fff;
+}
+.panowin p {
+    margin: 5px 0 0;
+    padding: 0;
+}
+.customwin {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #a0a0a4;
+    font-size: 11px;
+    line-height: 1;
+    margin: 33px 0;
+    padding: 5px;
+}
+.customwin a {
+    color: #666;
+}
+.customwin .logo {
+    height: 25px;
+    width: 119px;
+}
+.customwin .author {
+    margin: 0;
+    padding: 0;
+}
+.customwin .thumb {
+    margin: 0 auto 5px;
+    padding: 0;
+    width: 100%;
+}
+.customwin .thumb img {
+    display: block;
+    width: 100%;
+}
+
