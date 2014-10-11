@@ -94,9 +94,10 @@
     });
     /* 地図の初期化 */
     function initialize() {
-        /* 緯度・経度：平和公園 宮島*/
+        /* 緯度・経度：平和公園 宮島 頼山陽史跡資料館 */
         var peacepark=new google.maps.LatLng(34.393081, 132.452242);
-  var miyajima= new google.maps.LatLng(34.275092, 132.307649);
+        var miyajima= new google.maps.LatLng(34.275092, 132.307649);
+	var raisanyo= new google.maps.LatLng(34.392491, 132.457289);
         /* 地図のオプション設定 */
         var myOptions={
             /*初期のズーム レベル */
@@ -120,6 +121,12 @@ name: "miyajima",
             map: map,
             title:"宮島"
         });
+        var marker3=new google.maps.Marker({
+            position: raisanyo,
+	    name: "raisanyo",
+            map: map,
+            title:"頼山陽史跡資料館"
+        });
         /* マーカーがクリックされた時 */
         google.maps.event.addListener(marker1, 'click', function() {
             showInfoWindow(this);
@@ -133,7 +140,7 @@ name: "miyajima",
             if(infowindow) infowindow.close();
             infowindow=new google.maps.InfoWindow({
                 /* クリックしたマーカーのタイトルと詳細へのリンクを表示 */
-		    "<a href="+obj.name+".html target=_blank>content:obj.getTitle()+"</a><br />"+"<div class=¥"controls¥"><label class=¥"checkbox inline¥"><input type=¥"checkbox¥" id=¥"inlineCheckbox1¥" value=¥"option1¥">もう行きました</label></div>",
+		    content:"<a href="+obj.name+".html target=_blank>"+obj.getTitle()+"</a><br /><div class=controls><label class=checkbox inline><input type=checkbox id=inlineCheckbox1 value=option1>もう行きました</label></div>",
             });
             infowindow.open(map,obj);
         }
