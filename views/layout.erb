@@ -133,7 +133,7 @@ name: "miyajima",
             if(infowindow) infowindow.close();
             infowindow=new google.maps.InfoWindow({
                 /* クリックしたマーカーのタイトルと詳細へのリンクを表示 */
-    content:obj.getTitle()+"<br />"+"<a href="+obj.name+".html target=_blank>詳細</a>",
+		    "<a href="+obj.name+".html target=_blank>content:obj.getTitle()+"</a><br />"+"<div class=¥"controls¥"><label class=¥"checkbox inline¥"><input type=¥"checkbox¥" id=¥"inlineCheckbox1¥" value=¥"option1¥">もう行きました</label></div>",
             });
             infowindow.open(map,obj);
         }
