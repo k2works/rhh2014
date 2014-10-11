@@ -1,0 +1,6 @@
+# Sequel Database Configuration
+
+development: "sqlite://db/development.sqlite3"
+test: "sqlite://db/test.sqlite3"
+staging: "sqlite://db/staging.sqlite3"
+production: "sqlite://db/production.sqlite3"
